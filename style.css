@@ -3,12 +3,14 @@
 }
 
 html {
-  font-family: sans-serif;
+    font-family: "Zen Dots";
+    src: url("/font/ZenDots-Regular.ttf") format("truetype");
+    
 }
 
 body {
   margin: 0;
-  background: #ccc;
+  background: white;
 }
 
 article {
@@ -22,6 +24,8 @@ address {
   position: absolute;
   bottom: 8mm;
   right: 20mm;
+  color: orange;
+  font-size: small;
 }
 
 h1 {
@@ -36,4 +40,43 @@ h1 {
   padding: 44px 0;
   color: white;
   text-shadow: 1px 1px 1px black;
+}
+
+/* Background images & Border */
+
+article {
+  background: url(img/space_top.png) no-repeat left top;
+  background:
+    url(img/space_top.png) no-repeat left top,
+    url(img/space_bottom.png) no-repeat left bottom;
+  background-color: transparent;
+  background-size: auto 200px, auto 200px;
+  padding-top: 100px;  /* Match the top image height */
+  padding-bottom: 100px; /* Match the bottom image height */
+
+  border-top: 1mm solid yellow;
+  border-bottom: 1mm solid blue;
+}
+
+h1 {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-radius: 64px;
+  display: inline-block;
+  padding: 20px 40px;
+}
+
+.gif-planets { 
+  position: absolute;
+  left: 20mm; /* same distance from left edge as address is from right */
+  width: 150px;
+  height: 150px;
+  background-image: url(img/solar-system.gif);
+  background-size: cover;
+  background-repeat: no-repeat;
+  pointer-events: none;
+
+  /* Align with first line of Address text */
+  bottom: calc(8mm + 1em - 20px); /* 8mm is address bottom offset, 1em ~ one line height */
 }
